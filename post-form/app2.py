@@ -61,6 +61,7 @@ def process():
                                 or wordsAfter == "openings" or wordsAfter == "position"):
                             result.update(
                                 {str(numSpan): str("targetOpenings")})
+
                     if token.label_ == "DATE":
                         allText = [t.text for t in skills_other_doc]
                         textIndex = allText.index(
@@ -68,6 +69,8 @@ def process():
                         dateSpan = str(skills_other_doc.ents[index])
                         sp_len = len(skills_other_doc.ents[index].text.split(" "))
                         wordsBefore = allText[textIndex - sp_len]
+
+                        
                         if (wordsBefore == "for" or wordsBefore == "to" or wordsBefore == "until") and "months" in dateSpan:
                             typeDate = "duration"
                         elif wordsBefore == "from" or wordsBefore == "on" or wordsBefore == "starting" or wordsBefore == "the":
