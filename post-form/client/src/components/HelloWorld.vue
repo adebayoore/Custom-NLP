@@ -1,60 +1,120 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <v-text-area></v-text-area>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <v-container>
+    <v-row class="text-center">
+      <v-col cols="12">
+        <h1 class="display-2 font-weight-bold mb-3">
+          Custom Entity Recognition <v-btn icon @click="dialog = true">
+            <v-icon>mdi-help-circle-outline</v-icon>
+          </v-btn>
+        </h1>
+        <v-textarea
+          clearable
+          clear-icon="cancel"
+          label="Enter Job Request"
+        ></v-textarea>
+        <v-btn text outlined>Post</v-btn>
+        <v-spacer></v-spacer>
+      </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+        <v-text-field
+          outlined
+            v-model="firstname"
+            label="Target Openings"
+            disabled
+          ></v-text-field>
+          <v-text-field outlined
+          disabled
+            v-model="lastname"
+            label="Start Date"
+          ></v-text-field>
+          <v-text-field
+          outlined
+          disabled
+            v-model="email"
+            :rules="emailRules"
+            label="Location"
+          ></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          md="4"
+        >
+        <v-text-field
+        disabled
+          outlined
+            v-model="lastname"
+            label="Job Title"
+          ></v-text-field>
+          <v-text-field
+          outlined
+          disabled
+            v-model="email"
+            label="Duration"
+          ></v-text-field>
+          <v-text-field
+          outlined
+          disabled
+            v-model="lastname"
+            label="Rate"
+          ></v-text-field>
+        </v-col>
+         <v-col
+          cols="12"
+          md="4"
+        >
+          <v-textarea
+          disabled
+          name="input-7-1"
+          label="Skills"
+          v-model="w"
+        ></v-textarea>
+        </v-col>
+        <v-dialog v-model="dialog" width="500">
+          <v-card>
+            <v-card-title class="headline grey lighten-2">
+          How it Works
+        </v-card-title>
+        <v-card-text>
+          Lorem ipsum dolor sit
+          pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="dialog = false"
+          >
+            I accept
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+        </v-dialog>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
+
+  data: () => ({
+    dialog: false,
+    ecosystem: [
+      {
+        text: 'Medium Blog',
+        href: 'https://medium.com/@adebayo.oremule',
+      },
+      {
+        text: 'Github Portfolio',
+        href: 'https://github.com/adebayoore',
+      },
+    ],
+  }),
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
