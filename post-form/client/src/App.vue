@@ -13,7 +13,7 @@
       </v-spacer>
       <v-tooltip left>
       <template v-slot:activator="{ on, attrs }">
-      <v-btn icon href="https://github.com/adebayoore/Custom-NLP" target="blank"
+      <v-btn icon href="https://github.com/adebayoore" target="blank"
       v-bind="attrs"
           v-on="on"><v-icon>mdi-github</v-icon></v-btn>
       </template>

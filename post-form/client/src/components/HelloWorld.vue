@@ -9,7 +9,7 @@
         </h1>
         <v-textarea
           clearable
-          clear-icon="cancel"
+          clear-icon="mdi-close"
           label="Enter Job Request"
         ></v-textarea>
         <v-btn text outlined>Post</v-btn>
