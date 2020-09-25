@@ -36,7 +36,7 @@
     <v-col
       class="text-left"
       cols="12"
-    ><strong><span>&copy;OremSolute</span></strong>
+    ><strong><span>&copy;Orem</span></strong>
     </v-col>
   </v-footer>
   </v-app>
